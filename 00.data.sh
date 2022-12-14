@@ -1,21 +1,7 @@
-#ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz ./ -e oss-cn-beijing.aliyuncs.com -i LTAI5tSNqm6oJfQVeBdDV8YF -k rO1QCb4rQfCd7YEFuZvobNGIPBS1fT
-#ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz.tbi ./ -e oss-cn-beijing.aliyuncs.com -i LTAI5tSNqm6oJfQVeBdDV8YF -k rO1QCb4rQfCd7YEFuZvobNGIPBS1fT
-
 ## gatk硬过滤后的变异：2774个群体
-./ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz ./
-./ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz.tbi ./
-
-./ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter_indel/run-1QCO3jLwtMh9uxDTKRosUln5TTe/filter_variant/5aea0811-729a-45b5-8f20-2ba1165b4360/call-merge_filtered_indel_vcfs/bn_2774.merged.indel.filtered.vcf.gz ./
-./ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter_indel/run-1QCO3jLwtMh9uxDTKRosUln5TTe/filter_variant/5aea0811-729a-45b5-8f20-2ba1165b4360/call-merge_filtered_indel_vcfs/bn_2774.merged.indel.filtered.vcf.gz.tbi ./
 nohup plink --vcf Bn_2774.merged.snp.filtered.vcf.gz --recode --out snp --allow-extra-chr --make-bed &
 
 ## #maf>0.05,missing rate <0.5过滤后的SNP：2774个群体
-ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz ./ -e oss-cn-beijing.aliyuncs.com -i LTAI5tSNqm6oJfQVeBdDV8YF -k rO1QCb4rQfCd7YEFuZvobNGIPBS1fT
-ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-merge_filtered_vcfs/Bn_2774.merged.snp.filtered.vcf.gz.tbi ./ -e oss-cn-beijing.aliyuncs.com -i LTAI5tSNqm6oJfQVeBdDV8YF -k rO1QCb4rQfCd7YEFuZvobNGIPBS1fT
-/mnt/project/rapeseed/data/Bna_2774/ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-plink_filter/Bn_2774.plink.filtered.bed ./
-/mnt/project/rapeseed/data/Bna_2774/ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-plink_filter/Bn_2774.plink.filtered.bim ./
-/mnt/project/rapeseed/data/Bna_2774/ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-plink_filter/Bn_2774.plink.filtered.fam ./
-/mnt/project/rapeseed/data/Bna_2774/ossutil64 cp oss://biobin-3rdparty-saile/analysis/filter/run-1PpkbvzHlYT0zu7nJM583iR4wPR/imputation/713738f0-626b-48f2-8d58-60d4233208a6/call-plink_filter/Bn_2774.plink.filtered.log ./
 plink --bfile Bn_2774.plink.filtered  --recode vcf-iid --out Bn_2774.filtered --allow-extra-chr
 bcftools view Bn_2774.filtered.vcf -Oz -o Bn_2774.filtered.vcf.gz
 bcftools index Bn_2774.filtered.vcf.gz
